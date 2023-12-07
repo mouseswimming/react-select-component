@@ -1,0 +1,108 @@
+.container {
+  --light-grey: #777;
+  --dark-grey: #333;
+  --lighter-grey: #ddd;
+  --light-blue: hsl(200, 100%, 80%);
+  --dark-blue: hsl(200, 100%, 50%);
+
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--light-grey);
+  min-height: 1.5em;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  gap: 0.5em;
+  position: relative;
+}
+
+.container:focus {
+  border-color: var(--dark-blue);
+}
+
+.values {
+  flex-grow: 1;
+  display: flex;
+  gap: 0.5em;
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.25em;
+  color: var(--light-grey);
+  display: flex;
+  align-items: center;
+}
+
+button:hover,
+button:focus-visible {
+  color: var(--dark-grey);
+}
+
+.caret {
+  border: 0.25em solid transparent;
+  border-top-color: var(--light-grey);
+  transform: translate(0, 25%);
+}
+
+.dividor {
+  width: 1px;
+  background-color: var(--light-grey);
+  align-self: stretch;
+}
+
+.options {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+  max-height: 15em;
+  overflow-y: auto;
+  border: 1px solid var(--dark-grey);
+  border-radius: 0.25em;
+  width: 100%;
+  left: 0;
+  top: calc(100% + 0.5em);
+  background-color: white;
+  z-index: 100;
+}
+
+.options.open {
+  display: grid;
+  row-gap: 2px;
+}
+
+.option {
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+}
+
+.option.selected {
+  background-color: var(--light-blue);
+}
+
+.option.highlighted {
+  background-color: var(--lighter-grey);
+}
+
+.optionBadge {
+  padding: 0.25em;
+  border: 1px solid var(--light-grey);
+  border-radius: 0.25em;
+  font-size: 0.925em;
+}
+
+.optionBadge::after {
+  content: "\0000D7";
+  margin-left: 0.25em;
+  padding-left: 0.25em;
+  border-left: 1px solid var(--light-grey);
+}
+
+.optionBadge:hover::after {
+  color: var(--dark-blue);
+}
